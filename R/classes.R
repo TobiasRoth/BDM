@@ -1,0 +1,2 @@
+setGeneric("coef")
+setGeneric("summary")

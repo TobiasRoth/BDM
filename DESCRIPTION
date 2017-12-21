@@ -1,0 +1,14 @@
+Package: BDM
+Type: Package
+Title: Collection of functions to analyze biodiversity data from Switzerland
+Version: 0.1-7
+Date: 2013-02-13
+Author: Tobias Roth & Nicolas Strebel
+Maintainer: Tobias Roth <roth@hintermannweber.ch> and Nicolas Strebel <strebel@hintermannweber.ch>
+Description: Collection of functions to analyze data from different biodiversity monitoring programs from Switzerland. The package includes functions to calculate baseline data, but also functions for data controlling, functions for data handling and functions to make figures.  
+Depends: R(>= 2.14.0), methods, lme4
+Imports: PBSmapping, simba, sp
+URL: http://hintermannweber.ch
+License: GPL (>= 2)
+LazyLoad: yes
+LazyData: yes

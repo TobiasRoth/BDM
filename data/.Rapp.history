@@ -1,0 +1,2 @@
+load("/Volumes/Schreibtisch Ro/999_R_Packet/BDM/data/argovianSHP.rda")
+load("/Users/roth/Documents/GitHub/P999_R_Packet/BDM/data/swissSHP.rda")

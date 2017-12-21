@@ -1,0 +1,16 @@
+### Methods needed from other packages
+  importFrom("lme4", lmer)
+
+### Export main functions of the BDM-package
+
+  # Testing functions
+  export(checkDouble, checkDoubleSurv)
+
+  # Help functions
+  export(coordID2coord, logit, probit, summaryBDM, swissGrid, aggrButterflies)
+
+  # All methods for imported generics
+#  exportMethods(coef, summary)
+
+  # Main functions
+  export(KI, MAR, MARdiff, Z8, Z12)
