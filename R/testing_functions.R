@@ -1,4 +1,3 @@
-
 #--------------------------------------------------------------------------------------------------------------------
 # Check whether one species is recorded several times during one survey
 #--------------------------------------------------------------------------------------------------------------------
@@ -19,8 +18,6 @@ function(dat) {
     res
 }
 
-#data(birdsLANAG)
-#checkDouble(birdsLANAG[,c("coordID", "pyear", "speciesID")])
 
 #--------------------------------------------------------------------------------------------------------------------
 # Check whether surveys are listed more than once in Kopfdaten
@@ -56,7 +53,3 @@ function(dat) {
     print(temp[,1:2],row.names=F)
   }
 }
-
-#data(BDMZ9)
-#checkDoubleSurv(BDMZ9$sur[,c("coordID", "pyear")])
-
