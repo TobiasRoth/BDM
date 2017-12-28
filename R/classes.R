@@ -1,2 +1,0 @@
-setGeneric("coef")
-setGeneric("summary")

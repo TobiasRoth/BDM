@@ -11,9 +11,11 @@ LazyData: true
 RoxygenNote: 6.0.1
 Depends: 
     R (>= 2.10),
-    dplyr
+    dplyr,
+    sp
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    leaflet
 VignetteBuilder: 
     knitr
