@@ -30,6 +30,6 @@ require(leaflet)
 tmp <- coordID2coord(coordID = c(645260), Z7 = FALSE, projection = "WGS")
 leaflet() \%>\% 
   addTiles() \%>\% 
-  addCircles(tmp@coords[,1], tmp@coords[,2], )
+  addCircles(data = tmp)
 
 }
