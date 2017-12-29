@@ -14,6 +14,7 @@ Depends:
     dplyr,
     rgdal,
     sp,
+    rgeos,
     leaflet
 Suggests: 
     knitr,

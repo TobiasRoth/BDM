@@ -4,16 +4,18 @@
 #' data and plots them on a leaflet.
 #'
 #' @param coordID Vector with site coordinates
-#' @return A leaflet with ploted Z7 or Z9 sites.
+#' @param ortho Whether orthofotos should be used as background image.
+#' @return A leaflet with ploted Z7 sites.
 #' @export
 #'
 #' @examples
-#' require(leaflet)
 #' plotZ7(645260)
-plotZ7 <- function(coordID, Z7 = TRUE) {
+plotZ7 <- function(coordID, ortho = FALSE) {
+  if(ortho) tilprov <- "Esri.WorldImagery"
+  if(!ortho) tilprov <- "OpenStreetMap.Mapnik"
   q <- makesq(coordID, projection = "WGS")
   map <- leaflet() %>% 
-    addTiles() %>% 
+    addProviderTiles(tilprov) %>% 
     addPolygons(data = q)
   return(map)
 }
