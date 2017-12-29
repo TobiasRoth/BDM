@@ -2,7 +2,7 @@
 % Please edit documentation in R/makesq.R
 \name{makesq}
 \alias{makesq}
-\title{Transform site ID to coordinates}
+\title{Transform site ID to a shape of a square}
 \usage{
 makesq(coordID, projection = "CH-old", sidelength = 1000)
 }
