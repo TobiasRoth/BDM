@@ -1,4 +1,4 @@
-#' Transform site ID to coordinates
+#' Transform site ID to a shape of a square
 #' 
 #' The function transforms the site ID (that consits of 6 digits) to the
 #' SpatialPolygons of squares (with a given sidelength) in Swiss grid projection
