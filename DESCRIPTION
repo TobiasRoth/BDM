@@ -17,7 +17,6 @@ Depends:
     leaflet
 Suggests: 
     knitr,
-    rmarkdown,
-
+    rmarkdown
 VignetteBuilder: 
     knitr
