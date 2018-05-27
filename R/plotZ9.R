@@ -17,6 +17,6 @@ plotZ9 <- function(coordID,  ortho = TRUE) {
   q <- spTransform(q, CRS("+init=epsg:4326"))
   map <- leaflet() %>% 
     addProviderTiles(tilprov) %>% 
-    addPolygons(data = q, color = "red", weight = 3, opacity = 1, fillColor = "red")
+    addPolygons(data = q, color = "red", weight = 3, opacity = 1, fillColor = "red", label = as.character(coordID))
   return(map)
 }

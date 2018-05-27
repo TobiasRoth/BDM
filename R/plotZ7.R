@@ -16,6 +16,6 @@ plotZ7 <- function(coordID, ortho = FALSE) {
   q <- makesq(coordID, projection = "WGS")
   map <- leaflet() %>% 
     addProviderTiles(tilprov) %>% 
-    addPolygons(data = q)
+    addPolygons(data = q, label = as.character(coordID))
   return(map)
 }
