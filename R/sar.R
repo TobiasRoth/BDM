@@ -15,12 +15,12 @@
 #' @examples
 #' sar(SR = rpois(20, 60), A = rnorm(20 ,100, 25), stand = 200, minA = 20)
 sar <- function(SR, A, stand, minA) {
-  d <- tibble(SR = SR, A = A) %>% 
-    filter(!is.na(SR) & !is.na(A)) %>% 
-    filter(A >= minA) %>% 
-    filter(SR > 0)
-  koef <- coef(lm(log(SR) ~ log(A), data = d))
-  SR_stand <- (exp(koef[1]) * stand^koef[2]) + (d$SR - (exp(koef[1]) * d$A^koef[2]))
-  as.integer(round(SR_stand, 0))
+  d <- tibble(SR = SR, A = A)
+  koef <- coef(lm(log(SR) ~ log(A), 
+                  data = d %>% filter(!is.na(SR) & !is.na(A)) %>% 
+                    filter(A >= minA) %>% 
+                    filter(SR > 0)))
+  d$SR_stand <- (exp(koef[1]) * stand^koef[2]) + (d$SR - (exp(koef[1]) * d$A^koef[2]))
+  as.integer(round(d$SR_stand, 0))
 }
 
