@@ -12,7 +12,7 @@
 #' plotZ7(645260)
 plotZ7 <- function(coordID, ortho = FALSE) {
   if(ortho) tilprov <- "Esri.WorldImagery"
-  if(!ortho) tilprov <- "OpenStreetMap.Mapnik"
+  if(!ortho) tilprov <- "OpenStreetMap.CH"
   q <- makesq(coordID, projection = "WGS")
   map <- leaflet() %>% 
     addProviderTiles(tilprov) %>% 

@@ -12,7 +12,7 @@
 #' plotZ9(645260)
 plotZ9 <- function(coordID,  ortho = TRUE) {
   if(ortho) tilprov <- "Esri.WorldImagery"
-  if(!ortho) tilprov <- "OpenStreetMap.Mapnik"
+  if(!ortho) tilprov <- "OpenStreetMap.CH"
   q <- gBuffer(coordID2coord(coordID, Z7 = FALSE), width = sqrt(10 / pi), quadsegs = 100)
   q <- spTransform(q, CRS("+init=epsg:4326"))
   map <- leaflet() %>% 
