@@ -7,10 +7,11 @@
 makesq(coordID, projection = "CH-old", sidelength = 1000)
 }
 \arguments{
-\item{coordID}{Vector with site coordinates}
+\item{coordID}{Vector or tibble with site site-IDs. If a tibble, the column
+with the site-IDs should be named as "aID_STAO".}
 
-\item{projection}{What projection should be used for the coordinates. One of 
-\enumerate{ 
+\item{projection}{What projection should be used for the coordinates. One of
+\enumerate{
     \item \code{CH-old}: Old Swiss-grid
     \item \code{CH-new}: New Swiss-grid
     \item \code{WGS}: WGS grid (e.g. to be used for leaflets, see example)}}
@@ -18,7 +19,8 @@ makesq(coordID, projection = "CH-old", sidelength = 1000)
 \item{sidelength}{The sidelength (in m) of the squares.}
 }
 \value{
-Tibble of class \code{sf} with a geometry that describes the sampling squares.
+Tibble of class \code{sf} with a geometry that describes the sampling
+  squares.
 }
 \description{
 The function transforms the site ID (that consits of 6 digits and points to
@@ -30,8 +32,8 @@ The latter can be used to plot the points on a leaflet (see examples).
 \examples{
 require(leaflet)
 tmp <- makesq(coordID = c(645260), projection = "WGS")
-leaflet() \%>\% 
-  addTiles() \%>\% 
+leaflet() \%>\%
+  addTiles() \%>\%
   addPolygons(data = tmp)
 
 }

@@ -1,7 +1,5 @@
 # R-Package with functions for Swiss biodiversity monitoring data
 
-[![Build Status](https://travis-ci.org/TobiasRoth/BDM.svg?branch=master)](https://travis-ci.org/TobiasRoth/BDM)
-
 R package with function to analyse the data from Swiss biodiversity monitoring programs.
 
 
