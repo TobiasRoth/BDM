@@ -15,8 +15,8 @@ plotZ9(coordID, ortho = TRUE)
 A leaflet with ploted Z9 sites.
 }
 \description{
-The function transforms the site ID (that consits of 6 digits) to spatial
-data and plots them on a leaflet.
+The function transforms the site ID (that consits of 6 digits) to a tibble of
+class sf them on a leaflet.
 }
 \examples{
 plotZ9(645260)

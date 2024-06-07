@@ -18,13 +18,14 @@ makesq(coordID, projection = "CH-old", sidelength = 1000)
 \item{sidelength}{The sidelength (in m) of the squares.}
 }
 \value{
-Shapefile (as \code{SpatialPolygons} of package sp) of the sampling squares.
+Tibble of class \code{sf} with a geometry that describes the sampling squares.
 }
 \description{
-The function transforms the site ID (that consits of 6 digits) to the
-SpatialPolygons of squares (with a given sidelength) in Swiss grid projection
-(old or new) or WGS projection. The latter can be used to plot the points on
-a leaflet (see examples).
+The function transforms the site ID (that consits of 6 digits and points to
+the SW corner of the square) to a tibble with class sf and a polygon as a
+geometry. The polygon is a square with a given sidelength in meter. The
+projection is eiter a the Swiss projection (old or new) or WGS projection.
+The latter can be used to plot the points on a leaflet (see examples).
 }
 \examples{
 require(leaflet)

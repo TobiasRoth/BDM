@@ -21,9 +21,10 @@ coordID2coord(coordID, Z7 = TRUE, projection = "CH-old")
 Coordinates of sampling locations as \code{SpatialPoints} of package sp.
 }
 \description{
-The function transforms the plot ID (that consits of 6 digits) to
-Spatialpoints in Swiss grid projection (old or new) or WGS projection. The
-latter can be used to plot the points on a leaflet (see examples).
+The function transforms the plot ID (that consits of 6 digits) to a tibble of
+class sf with a geometry that contains the points in Swiss grid projection
+(old or new) or WGS projection. The latter can be used to plot the points on
+a leaflet (see examples).
 }
 \examples{
 require(leaflet)

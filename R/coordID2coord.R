@@ -1,8 +1,9 @@
 #' Transform plot ID to coordinates
 #' 
-#' The function transforms the plot ID (that consits of 6 digits) to
-#' Spatialpoints in Swiss grid projection (old or new) or WGS projection. The
-#' latter can be used to plot the points on a leaflet (see examples).
+#' The function transforms the plot ID (that consits of 6 digits) to a tibble of
+#' class sf with a geometry that contains the points in Swiss grid projection
+#' (old or new) or WGS projection. The latter can be used to plot the points on
+#' a leaflet (see examples).
 #' 
 #' @param coordID Vector with plot coordinates
 #' @param Z7 Logical 
@@ -28,16 +29,22 @@ coordID2coord <- function(coordID, Z7 = TRUE, projection = "CH-old") {
   if (is.na(proj)) stop("'Projection' should be one of 'CH-old', 'CH-new' or 'WGS'")
   
   if (Z7) {
-    res <- data.frame(
-      x = as.integer(substr(coordID, 1, 3))*1000 + 500,
-      y = as.integer(substr(coordID, 4, 6))*1000 + 500)
+    res <- tibble(
+      aID_STAO = coordID,
+      x = paste0(str_sub(coordID, 1, 3), "500"),
+      y = paste0(str_sub(coordID, 4, 6), "500")
+    ) %>% 
+      st_as_sf(coords = c("x", "y"), crs = 21781)
   }
   if (!Z7) {
-    res <- data.frame(
-      x = as.integer(substr(coordID, 1, 3))*1000,
-      y = as.integer(substr(coordID, 4, 6))*1000)
+    res <- tibble(
+      aID_STAO = coordID,
+      x = paste0(str_sub(coordID, 1, 3), "000"),
+      y = paste0(str_sub(coordID, 4, 6), "000")
+    ) %>% 
+      st_as_sf(coords = c("x", "y"), crs = 21781)
   }
-  coordinates(res) <- ~ x + y
-  proj4string(res) <- CRS("+init=epsg:21781") 
-  spTransform(res, c(CRS("+init=epsg:21781"), CRS("+init=epsg:2056"), CRS("+init=epsg:4326"))[[proj]])
+
+  st_transform(res, crs = c(21781, 2056, 4326)[proj])
 }
+
